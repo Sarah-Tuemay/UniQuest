@@ -1,0 +1,178 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+header {
+    background-color: #1a365d;
+    color: white;
+    padding: 1rem;
+    position:fixed;
+    top: 0;
+    left: 0; 
+    width: 100%; 
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor:pointer;
+}
+.logo:hover{
+    color:#929fb270;
+}
+
+.navigator a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+}
+.navigator a:hover {
+    color: #929fb270;
+}
+
+.hero{
+    
+    background-image: url('https://i.pinimg.com/736x/41/34/b4/4134b45ee2736cba383e641d53c2cee5.jpg');
+    background-size: cover;
+    background-position: center;
+    
+   
+    height: 120vh; 
+    background-repeat: no-repeat;
+    background-attachment: scroll; 
+    filter: brightness(0.85); 
+    position: relative; 
+}
+
+
+.hero {
+    background-color: #f0f4f8;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 0px;
+    color: #c5e2fa;
+    padding:60px;
+}
+
+.hero p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #c5e2fa;
+}
+h2{
+    margin-top: 20px;
+    margin-left: 40%;
+    color:#1a365d ;
+    font-size: 2.5rem;
+}
+
+.jobs-container {
+    max-width: 65%;
+    height: auto;
+    margin: 0 auto;
+    margin: 15px auto;
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 20px 0; 
+}
+.jobs-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1a365d;
+    text-align: center;
+}
+
+.job-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-decoration: none;
+
+}
+.job-card a
+{
+    text-decoration: none;
+    color: inherit; 
+}
+.job-card:hover a {
+    text-decoration: none;
+    color: rgb(116, 116, 166);
+}
+.job-card:hover{
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.job-card h3 {
+    color: #2b6cb0;
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+footer {
+    background-color: #1a365d;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .navigator {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+.social-icons {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+    color: #b2c4d8; /* Your brand blue color */
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+    .social-icons {
+        gap: 1rem;
+    }
+    .social-icons a {
+        font-size: 1.5rem;
+    }
+}
