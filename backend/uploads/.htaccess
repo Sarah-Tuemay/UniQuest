@@ -1,0 +1,11 @@
+# Prevent direct execution of uploaded files
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|sh|cgi)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Allow image and document access
+<FilesMatch "\.(jpg|jpeg|png|webp|gif|pdf|doc|docx)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>

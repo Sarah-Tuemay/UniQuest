@@ -1,0 +1,168 @@
+/* ============================================
+   UniQuest - Tech Jobs Page Styles
+   ============================================ */
+
+/* ---- Tech Hero ---- */
+.page-hero.tech-hero {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.tech-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://i.pinimg.com/736x/41/34/b4/4134b45ee2736cba383e641d53c2cee5.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.35);
+}
+
+.tech-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 5rem 1.5rem 2rem;
+}
+
+.tech-hero-text { max-width: 640px; }
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(99,179,237,0.2);
+  color: #90cdf4;
+  border: 1px solid rgba(99,179,237,0.3);
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.tech-hero-text h1 { color: white; margin-bottom: 0.75rem; }
+.tech-hero-text p  { color: rgba(255,255,255,0.75); font-size: 1.05rem; margin-bottom: 1.5rem; }
+
+.tech-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.tstat { display: flex; flex-direction: column; }
+.tstat strong { font-size: 1.5rem; font-weight: 800; color: white; line-height: 1; }
+.tstat span   { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-top: 0.2rem; }
+
+.breadcrumb-bar {
+  position: relative;
+  z-index: 2;
+  background: rgba(0,0,0,0.3);
+  padding: 0.75rem 0;
+  backdrop-filter: blur(4px);
+}
+
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+}
+
+.breadcrumb a { color: rgba(255,255,255,0.7); transition: var(--transition); }
+.breadcrumb a:hover { color: white; }
+.breadcrumb i { font-size: 0.65rem; }
+
+/* ---- Tech Jobs Section ---- */
+.tech-jobs-section { background: var(--bg-light); }
+
+.tech-jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+.tech-job-card {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tjc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tjc-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 12px rgba(43,108,176,0.3);
+}
+
+.tjc-badges { display: flex; gap: 0.4rem; }
+
+.tech-job-card h3 { color: var(--primary); font-size: 1.1rem; }
+
+.tjc-location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.tjc-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.tjc-details li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-mid);
+}
+
+.tjc-details li i { color: var(--accent); width: 14px; }
+
+.tjc-desc {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-mid);
+}
+
+.tjc-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tjc-skills span {
+  background: #ebf8ff;
+  color: #2b6cb0;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .tech-jobs-grid { grid-template-columns: 1fr; }
+  .tech-stats { gap: 1.25rem; }
+}

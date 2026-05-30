@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobs – UniQuest</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/jobs.css" />
+  <!-- Base path for API calls -->
+  <script>window.API_BASE = '../../backend/api';</script>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav>
+      <div class="logo">Uni<span>Quest</span></div>
+      <div class="nav-links"><!-- filled by shared.js --></div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav"><!-- filled by shared.js --></div>
+  </header>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Campus Job Listings</h1>
+      <p>Find flexible, meaningful work that fits your schedule and builds your career</p>
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Jobs</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REACT JOB SEARCH APP (signed-in users only) ===== -->
+  <div id="jobs-app-wrap">
+    <div id="jobs-app"></div>
+  </div>
+
+  <!-- ===== SIGN-IN PROMPT (guests only) ===== -->
+  <div id="jobs-guest-prompt" class="jobs-guest-prompt hidden">
+    <div class="container">
+      <div class="guest-prompt-inner">
+        <i class="fa-solid fa-lock"></i>
+        <div>
+          <h3>Sign in to search and filter all job listings</h3>
+          <p>Create a free account to access the full job board, apply to positions, and track your applications.</p>
+        </div>
+        <div class="guest-prompt-actions">
+          <a href="login.html" class="btn btn-primary">Sign In</a>
+          <a href="login.html" class="btn btn-outline">Create Account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CATEGORIES SECTION ===== -->
+  <section class="section categories-section">
+    <div class="container">
+      <h2 class="section-title">Browse by Category</h2>
+      <p class="section-subtitle">Explore all available job categories on campus</p>
+      <div class="categories-grid">
+
+        <div class="cat-card" onclick="window.location='tech.html'">
+          <div class="cat-img-wrap">
+            <img src="https://i.pinimg.com/736x/41/34/b4/4134b45ee2736cba383e641d53c2cee5.jpg" alt="IT & Tech" loading="lazy" />
+            <div class="cat-overlay"></div>
+          </div>
+          <div class="cat-body">
+            <div class="cat-body-top">
+              <div class="cat-icon it"><i class="fa-solid fa-laptop-code"></i></div>
+              <div>
+                <h3>IT &amp; Tech</h3>
+                <p>Explore tech-related jobs on campus.</p>
+              </div>
+            </div>
+            <a href="tech.html" class="btn btn-primary btn-sm">View Jobs</a>
+          </div>
+        </div>
+
+        <div class="cat-card">
+          <div class="cat-img-wrap">
+            <img src="https://i.pinimg.com/736x/b6/fa/6a/b6fa6aa855e0c7b9d01d4182745c2bf2.jpg" alt="Administration" loading="lazy" />
+            <div class="cat-overlay"></div>
+          </div>
+          <div class="cat-body">
+            <div class="cat-body-top">
+              <div class="cat-icon admin"><i class="fa-solid fa-building-columns"></i></div>
+              <div>
+                <h3>Administration</h3>
+                <p>Find admin roles that fit your schedule.</p>
+              </div>
+            </div>
+            <a href="#jobs-app" class="btn btn-primary btn-sm">View Jobs</a>
+          </div>
+        </div>
+
+        <div class="cat-card">
+          <div class="cat-img-wrap">
+            <img src="https://i.pinimg.com/736x/7e/0b/24/7e0b246c62a6fc990b5455da6a7fd693.jpg" alt="Events" loading="lazy" />
+            <div class="cat-overlay"></div>
+          </div>
+          <div class="cat-body">
+            <div class="cat-body-top">
+              <div class="cat-icon event"><i class="fa-solid fa-calendar-star"></i></div>
+              <div>
+                <h3>Events Organizer</h3>
+                <p>Join us for fun events and experience.</p>
+              </div>
+            </div>
+            <a href="#jobs-app" class="btn btn-primary btn-sm">View Jobs</a>
+          </div>
+        </div>
+
+        <div class="cat-card">
+          <div class="cat-img-wrap">
+            <img src="https://i.pinimg.com/736x/cc/f6/0f/ccf60fc9049b65a3ddfbc2efd1dada69.jpg" alt="Cleaning" loading="lazy" />
+            <div class="cat-overlay"></div>
+          </div>
+          <div class="cat-body">
+            <div class="cat-body-top">
+              <div class="cat-icon clean"><i class="fa-solid fa-broom"></i></div>
+              <div>
+                <h3>Cleaning Operative</h3>
+                <p>Facility Maintenance Specialist.</p>
+              </div>
+            </div>
+            <a href="#jobs-app" class="btn btn-primary btn-sm">View Jobs</a>
+          </div>
+        </div>
+
+        <div class="cat-card">
+          <div class="cat-img-wrap">
+            <img src="https://i.pinimg.com/736x/03/ad/43/03ad43f79d13b357e431b47382246d3d.jpg" alt="Customer Service" loading="lazy" />
+            <div class="cat-overlay"></div>
+          </div>
+          <div class="cat-body">
+            <div class="cat-body-top">
+              <div class="cat-icon cs"><i class="fa-solid fa-headset"></i></div>
+              <div>
+                <h3>Customer Service</h3>
+                <p>Work in various customer service roles.</p>
+              </div>
+            </div>
+            <a href="#jobs-app" class="btn btn-primary btn-sm">View Jobs</a>
+          </div>
+        </div>
+
+        <div class="cat-card">
+          <div class="cat-img-wrap">
+            <img src="../images/library assistant.jpg" alt="Library" loading="lazy" />
+            <div class="cat-overlay"></div>
+          </div>
+          <div class="cat-body">
+            <div class="cat-body-top">
+              <div class="cat-icon lib"><i class="fa-solid fa-book-open"></i></div>
+              <div>
+                <h3>Library Assistant</h3>
+                <p>Assist patrons and manage resources.</p>
+              </div>
+            </div>
+            <a href="#jobs-app" class="btn btn-primary btn-sm">View Jobs</a>
+          </div>
+        </div>
+
+        <div class="cat-card">
+          <div class="cat-img-wrap">
+            <img src="https://i.pinimg.com/736x/36/df/d4/36dfd428d1bf46a944066c8257341f93.jpg" alt="Marketing" loading="lazy" />
+            <div class="cat-overlay"></div>
+          </div>
+          <div class="cat-body">
+            <div class="cat-body-top">
+              <div class="cat-icon mkt"><i class="fa-solid fa-bullhorn"></i></div>
+              <div>
+                <h3>Marketing &amp; Social Media</h3>
+                <p>Help promote our services and events.</p>
+              </div>
+            </div>
+            <a href="#jobs-app" class="btn btn-primary btn-sm">View Jobs</a>
+          </div>
+        </div>
+
+        <div class="cat-card">
+          <div class="cat-img-wrap">
+            <img src="../images/BLACK astenagaj.jpg" alt="Food & Beverage" loading="lazy" />
+            <div class="cat-overlay"></div>
+          </div>
+          <div class="cat-body">
+            <div class="cat-body-top">
+              <div class="cat-icon food"><i class="fa-solid fa-utensils"></i></div>
+              <div>
+                <h3>Food &amp; Beverage</h3>
+                <p>Join our team in food service roles.</p>
+              </div>
+            </div>
+            <a href="#jobs-app" class="btn btn-primary btn-sm">View Jobs</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Uni<span>Quest</span></div>
+        <p>Connecting Ethiopian university students with flexible, meaningful campus job opportunities since 2025.</p>
+        <div class="social-icons mt-2">
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://t.me" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="jobs.html">Browse Jobs</a>
+        <a href="profile.html">Create Profile</a>
+        <a href="login.html">Sign In / Sign Up</a>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <a href="tech.html">IT &amp; Tech</a>
+        <a href="jobs.html">Administration</a>
+        <a href="jobs.html">Events</a>
+        <a href="jobs.html">Library</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:UniQuest@gmail.com"><i class="fa-solid fa-envelope"></i> UniQuest@gmail.com</a>
+        <a href="#"><i class="fa-brands fa-telegram"></i> @UniQuestET</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 UniQuest. Helping students find campus opportunities.</p>
+      <p>Made with <i class="fa-solid fa-heart" style="color:#e53e3e"></i> for Ethiopian students</p>
+    </div>
+  </footer>
+
+  <!-- React + Babel (CDN for no-build setup) -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script src="../js/shared.js"></script>
+  <script type="text/babel" src="../js/jobs-app.jsx"></script>
+</body>
+</html>

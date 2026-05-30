@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply – UniQuest</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/apply.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav>
+      <div class="logo">Uni<span>Quest</span></div>
+      <div class="nav-links"><!-- filled by shared.js --></div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav"><!-- filled by shared.js --></div>
+  </header>
+
+  <!-- ===== APPLY SECTION ===== -->
+  <section class="apply-section">
+    <div class="container apply-layout">
+
+      <!-- Job Details Panel -->
+      <aside class="job-details-panel">
+        <div class="jdp-header">
+          <div class="jdp-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <div>
+            <h2 id="jobTitle">Network Administrator</h2>
+            <p id="jobDept">Campus Network Center</p>
+          </div>
+        </div>
+
+        <div class="jdp-meta">
+          <div class="jdp-meta-item">
+            <i class="fa-solid fa-clock"></i>
+            <div><strong>Schedule</strong><span id="jobSchedule">Mon–Fri, 9 AM – 5 PM</span></div>
+          </div>
+          <div class="jdp-meta-item">
+            <i class="fa-solid fa-calendar"></i>
+            <div><strong>Duration</strong><span id="jobDuration">6 months</span></div>
+          </div>
+          <div class="jdp-meta-item">
+            <i class="fa-solid fa-coins"></i>
+            <div><strong>Pay Rate</strong><span id="jobPay">70 birr/hr</span></div>
+          </div>
+          <div class="jdp-meta-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div><strong>Location</strong><span>On Campus</span></div>
+          </div>
+        </div>
+
+        <div class="jdp-section">
+          <h4>About the Role</h4>
+          <p id="jobDesc">We are seeking a skilled Network Administrator to join our team at the Campus Network Center. The ideal candidate will manage and maintain our network infrastructure, ensuring optimal performance and security.</p>
+        </div>
+
+        <div class="jdp-section">
+          <h4>Responsibilities</h4>
+          <ul class="jdp-list" id="jobResponsibilities">
+            <li>Monitor network performance and troubleshoot issues</li>
+            <li>Configure and maintain network devices (routers, switches, firewalls)</li>
+            <li>Implement security measures to protect the network</li>
+            <li>Collaborate with IT teams on network-related projects</li>
+            <li>Document network configurations and changes</li>
+            <li>Provide technical support to end-users</li>
+          </ul>
+        </div>
+
+        <div class="jdp-section">
+          <h4>Requirements</h4>
+          <ul class="jdp-list" id="jobRequirements">
+            <li>Currently enrolled in Computer Science or related program</li>
+            <li>Strong understanding of networking concepts and protocols</li>
+            <li>Experience with network devices and configurations</li>
+            <li>Knowledge of network security practices</li>
+            <li>Excellent problem-solving and communication skills</li>
+          </ul>
+        </div>
+
+        <div class="jdp-skills" id="jobSkills">
+          <span>Networking</span><span>Cisco</span><span>Security</span><span>Linux</span>
+        </div>
+
+        <a href="jobs.html" class="btn btn-outline w-full mt-2">
+          <i class="fa-solid fa-arrow-left"></i> Back to Jobs
+        </a>
+      </aside>
+
+      <!-- Application Form -->
+      <div class="apply-form-wrap">
+        <div class="apply-form-header">
+          <h2>Submit Your Application</h2>
+          <p>Fill out the form below to apply for this position. We'll review your application and get back to you within 3–5 business days.</p>
+        </div>
+
+        <form id="applyForm" novalidate enctype="multipart/form-data">
+          <input type="hidden" name="job_id" id="jobIdInput" value="network-admin" />
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="appFirst">First Name <span class="req">*</span></label>
+              <input type="text" id="appFirst" name="first_name" class="form-control" placeholder="Abebe" required autocomplete="given-name" />
+              <span class="field-error" id="appFirstErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="appLast">Last Name <span class="req">*</span></label>
+              <input type="text" id="appLast" name="last_name" class="form-control" placeholder="Kebede" required autocomplete="family-name" />
+              <span class="field-error" id="appLastErr"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="appEmail">Email Address <span class="req">*</span></label>
+            <input type="email" id="appEmail" name="email" class="form-control" placeholder="you@university.edu.et" required autocomplete="email" />
+            <span class="field-error" id="appEmailErr"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="appPhone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="appPhone" name="phone" class="form-control" placeholder="09XXXXXXXX" pattern="09[0-9]{8}" required autocomplete="tel" />
+            <span class="field-error" id="appPhoneErr"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="appUniversity">University <span class="req">*</span></label>
+            <select id="appUniversity" name="university" class="form-control" required>
+              <option value="">Select your university</option>
+              <option value="aau">Addis Ababa University</option>
+              <option value="aastu">Addis Ababa Science and Technology University</option>
+              <option value="adama">Adama Science and Technology University</option>
+              <option value="hawassa">Hawassa University</option>
+              <option value="jimma">Jimma University</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="field-error" id="appUniErr"></span>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="appDept">Department / Field <span class="req">*</span></label>
+              <input type="text" id="appDept" name="department" class="form-control" placeholder="e.g. Computer Science" required />
+              <span class="field-error" id="appDeptErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="appYear">Year of Study <span class="req">*</span></label>
+              <select id="appYear" name="year" class="form-control" required>
+                <option value="">Select year</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+                <option value="5">5th Year</option>
+              </select>
+              <span class="field-error" id="appYearErr"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="appCover">Cover Letter / Why You're a Good Fit <span class="req">*</span></label>
+            <textarea id="appCover" name="cover_letter" class="form-control" rows="5" placeholder="Tell us about your relevant skills, experience, and why you're interested in this role..." required></textarea>
+            <span class="field-error" id="appCoverErr"></span>
+            <span class="char-count" id="coverCount">0 / 500 characters</span>
+          </div>
+
+          <div class="form-group">
+            <label for="appResume">Resume / CV <span class="req">*</span></label>
+            <div class="file-upload-wrap">
+              <input type="file" id="appResume" name="resume" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" required class="file-input" />
+              <div class="file-upload-ui" id="fileUploadUI">
+                <i class="fa-solid fa-file-arrow-up"></i>
+                <span id="fileLabel">Choose file or drag here</span>
+                <small>PDF, DOC, DOCX, or image — max 5MB</small>
+              </div>
+            </div>
+            <span class="field-error" id="appResumeErr"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="appAvail">Availability</label>
+            <select id="appAvail" name="availability" class="form-control">
+              <option value="">Select availability</option>
+              <option value="mornings">Mornings (8am–12pm)</option>
+              <option value="afternoons">Afternoons (12pm–5pm)</option>
+              <option value="evenings">Evenings (5pm–9pm)</option>
+              <option value="weekends">Weekends only</option>
+              <option value="flexible">Fully flexible</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg w-full" id="applyBtn">
+            <i class="fa-solid fa-paper-plane"></i> Submit Application
+          </button>
+        </form>
+
+        <!-- Success State -->
+        <div class="apply-success hidden" id="applySuccess">
+          <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h2>Application Submitted!</h2>
+          <p>Thank you for applying. We've received your application and will review it within <strong>3–5 business days</strong>.</p>
+          <p class="mt-1">A confirmation will be sent to your email address.</p>
+          <div class="success-actions">
+            <a href="jobs.html" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-briefcase"></i> Browse More Jobs
+            </a>
+            <a href="../../index.html" class="btn btn-outline btn-lg">
+              <i class="fa-solid fa-house"></i> Go Home
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Uni<span>Quest</span></div>
+        <p>Connecting Ethiopian university students with flexible, meaningful campus job opportunities since 2025.</p>
+        <div class="social-icons mt-2">
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://t.me" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="jobs.html">Browse Jobs</a>
+        <a href="profile.html">Create Profile</a>
+        <a href="login.html">Sign In / Sign Up</a>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <a href="tech.html">IT &amp; Tech</a>
+        <a href="jobs.html">Administration</a>
+        <a href="jobs.html">Events</a>
+        <a href="jobs.html">Library</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:UniQuest@gmail.com"><i class="fa-solid fa-envelope"></i> UniQuest@gmail.com</a>
+        <a href="#"><i class="fa-brands fa-telegram"></i> @UniQuestET</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 UniQuest. Helping students find campus opportunities.</p>
+      <p>Made with <i class="fa-solid fa-heart" style="color:#e53e3e"></i> for Ethiopian students</p>
+    </div>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/apply.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+/* ============================================
+   UniQuest - Account / Dashboard Page Styles
+   ============================================ */
+
+.account-main {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: calc(100vh - 64px - 80px);
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ---- Sidebar ---- */
+.account-sidebar {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: sticky;
+  top: 80px;
+}
+
+.account-avatar {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: white;
+}
+
+.avatar-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: 2px solid rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.avatar-info strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: white;
+}
+
+.avatar-info span {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.65);
+}
+
+.account-nav {
+  padding: 0.75rem 0;
+}
+
+.acc-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  color: var(--text-mid);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+  border-left: 3px solid transparent;
+}
+
+.acc-nav-item:hover {
+  background: var(--bg-light);
+  color: var(--primary);
+}
+
+.acc-nav-item.active {
+  background: #ebf8ff;
+  color: var(--accent);
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+
+.acc-nav-item i { width: 16px; text-align: center; }
+
+.acc-nav-item:last-child {
+  color: var(--danger);
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.acc-nav-item:last-child:hover { background: #fff5f5; }
+
+/* ---- Content ---- */
+.account-content {
+  min-width: 0;
+}
+
+.acc-tab { display: none; }
+.acc-tab.active { display: block; animation: fadeInUp 0.3s ease; }
+
+.acc-tab-header {
+  margin-bottom: 2rem;
+}
+
+.acc-tab-header h2 { color: var(--primary); margin-bottom: 0.3rem; }
+.acc-tab-header p  { color: var(--text-mid); }
+
+/* ---- Overview Stats ---- */
+.overview-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ov-stat {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.ov-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.ov-stat-icon.apps     { background: linear-gradient(135deg, #2b6cb0, #3182ce); }
+.ov-stat-icon.pending  { background: linear-gradient(135deg, #975a16, #d69e2e); }
+.ov-stat-icon.accepted { background: linear-gradient(135deg, #276749, #38a169); }
+.ov-stat-icon.profile-stat { background: linear-gradient(135deg, #553c9a, #805ad5); }
+
+.ov-stat strong {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.ov-stat span {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-top: 0.2rem;
+  display: block;
+}
+
+.overview-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ---- Recent / All Applications ---- */
+.recent-apps-wrap h3 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.recent-apps-list,
+.apps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.app-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.app-card:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+
+.app-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.app-card-info { flex: 1; min-width: 0; }
+.app-card-info strong { display: block; font-size: 0.95rem; color: var(--primary); }
+.app-card-info span   { font-size: 0.8rem; color: var(--text-light); }
+
+.app-status {
+  padding: 0.25rem 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  flex-shrink: 0;
+}
+
+.app-status.pending  { background: #fffff0; color: #975a16; }
+.app-status.reviewed { background: #ebf8ff; color: #2b6cb0; }
+.app-status.accepted { background: #f0fff4; color: #276749; }
+.app-status.rejected { background: #fff5f5; color: #c53030; }
+
+.app-date {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ---- Profile Info ---- */
+.profile-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.profile-info-item {
+  background: white;
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+}
+
+.profile-info-item label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+  margin-bottom: 0.3rem;
+}
+
+.profile-info-item span {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.profile-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.profile-status-badge.pending  { background: #fffff0; color: #975a16; }
+.profile-status-badge.approved { background: #f0fff4; color: #276749; }
+.profile-status-badge.rejected { background: #fff5f5; color: #c53030; }
+.profile-status-badge.none     { background: #edf2f7; color: #4a5568; }
+
+/* ---- Settings ---- */
+.settings-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.settings-card h3 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settings-card h3 i { color: var(--accent); }
+
+.danger-zone { border-color: #fed7d7; }
+.danger-zone h3 { color: var(--danger); }
+.danger-zone h3 i { color: var(--danger); }
+.danger-zone p { color: var(--text-mid); font-size: 0.9rem; margin-bottom: 1rem; }
+
+/* ---- Empty / Loading states ---- */
+.acc-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-light);
+}
+
+.acc-empty i { font-size: 2.5rem; margin-bottom: 0.75rem; opacity: 0.4; display: block; }
+.acc-empty p { font-size: 0.9rem; }
+.acc-empty a { color: var(--accent); font-weight: 600; }
+
+.acc-loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .account-main { grid-template-columns: 1fr; }
+  .account-sidebar { position: static; }
+  .account-nav { display: flex; overflow-x: auto; padding: 0; }
+  .acc-nav-item { white-space: nowrap; border-left: none; border-bottom: 3px solid transparent; padding: 0.75rem 1rem; }
+  .acc-nav-item.active { border-bottom-color: var(--accent); border-left: none; }
+  .acc-nav-item:last-child { border-top: none; margin-top: 0; }
+  .overview-stats { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .overview-stats { grid-template-columns: 1fr 1fr; }
+  .profile-info-grid { grid-template-columns: 1fr; }
+  .account-main { padding: 0 1rem; margin: 1.5rem auto; }
+}

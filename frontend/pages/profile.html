@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Profile – UniQuest</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/profile.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav>
+      <div class="logo">Uni<span>Quest</span></div>
+      <div class="nav-links"><!-- filled by shared.js --></div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav"><!-- filled by shared.js --></div>
+  </header>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero profile-hero">
+    <div class="container">
+      <h1>Create Your Student Profile</h1>
+      <p>Set up your profile to start applying for campus jobs. Verification takes 2–3 business days.</p>
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Create Profile</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROFILE FORM ===== -->
+  <section class="section profile-section">
+    <div class="container profile-layout">
+
+      <!-- Steps sidebar -->
+      <aside class="profile-steps">
+        <div class="step-item active" data-step="1">
+          <div class="step-dot"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <strong>Personal Info</strong>
+            <span>Name, contact details</span>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-item" data-step="2">
+          <div class="step-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div>
+            <strong>Academic Info</strong>
+            <span>University, year, field</span>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-item" data-step="3">
+          <div class="step-dot"><i class="fa-solid fa-id-card"></i></div>
+          <div>
+            <strong>Verification</strong>
+            <span>Upload student ID</span>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-item" data-step="4">
+          <div class="step-dot"><i class="fa-solid fa-circle-check"></i></div>
+          <div>
+            <strong>Review &amp; Submit</strong>
+            <span>Confirm your details</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Form -->
+      <div class="profile-form-wrap">
+        <form id="profileForm" novalidate enctype="multipart/form-data">
+
+          <!-- Step 1: Personal Info -->
+          <div class="form-step active" id="step1">
+            <div class="form-step-header">
+              <span class="step-badge">Step 1 of 4</span>
+              <h2>Personal Information</h2>
+              <p>Tell us about yourself so employers can get to know you.</p>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="firstName">First Name <span class="req">*</span></label>
+                <input type="text" id="firstName" name="first_name" class="form-control" placeholder="Abebe" required autocomplete="given-name" />
+                <span class="field-error" id="firstNameErr"></span>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name <span class="req">*</span></label>
+                <input type="text" id="lastName" name="last_name" class="form-control" placeholder="Kebede" required autocomplete="family-name" />
+                <span class="field-error" id="lastNameErr"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="you@university.edu.et" required autocomplete="email" />
+              <span class="field-error" id="emailErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="09XXXXXXXX" pattern="09[0-9]{8}" required autocomplete="tel" />
+              <span class="field-error" id="phoneErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender <span class="req">*</span></label>
+              <select id="gender" name="gender" class="form-control" required>
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="prefer_not">Prefer not to say</option>
+              </select>
+              <span class="field-error" id="genderErr"></span>
+            </div>
+            <div class="form-nav">
+              <span></span>
+              <button type="button" class="btn btn-primary" id="next1">
+                Next <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Academic Info -->
+          <div class="form-step" id="step2">
+            <div class="form-step-header">
+              <span class="step-badge">Step 2 of 4</span>
+              <h2>Academic Information</h2>
+              <p>Help us match you with the right opportunities.</p>
+            </div>
+            <div class="form-group">
+              <label for="university">University <span class="req">*</span></label>
+              <select id="university" name="university" class="form-control" required>
+                <option value="">Select your university</option>
+                <option value="aau">Addis Ababa University</option>
+                <option value="aastu">Addis Ababa Science and Technology University</option>
+                <option value="adama">Adama Science and Technology University</option>
+                <option value="hawassa">Hawassa University</option>
+                <option value="jimma">Jimma University</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="field-error" id="universityErr"></span>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="department">Department / Field <span class="req">*</span></label>
+                <input type="text" id="department" name="department" class="form-control" placeholder="e.g. Computer Science" required />
+                <span class="field-error" id="departmentErr"></span>
+              </div>
+              <div class="form-group">
+                <label for="year">Year of Study <span class="req">*</span></label>
+                <select id="year" name="year" class="form-control" required>
+                  <option value="">Select year</option>
+                  <option value="1">1st Year</option>
+                  <option value="2">2nd Year</option>
+                  <option value="3">3rd Year</option>
+                  <option value="4">4th Year</option>
+                  <option value="5">5th Year</option>
+                </select>
+                <span class="field-error" id="yearErr"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="skills">Skills &amp; Interests</label>
+              <textarea id="skills" name="skills" class="form-control" rows="3" placeholder="e.g. Web development, event planning, customer service, data entry..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="availability">Availability</label>
+              <select id="availability" name="availability" class="form-control">
+                <option value="">Select availability</option>
+                <option value="mornings">Mornings (8am–12pm)</option>
+                <option value="afternoons">Afternoons (12pm–5pm)</option>
+                <option value="evenings">Evenings (5pm–9pm)</option>
+                <option value="weekends">Weekends only</option>
+                <option value="flexible">Fully flexible</option>
+              </select>
+            </div>
+            <div class="form-nav">
+              <button type="button" class="btn btn-outline" id="back2">
+                <i class="fa-solid fa-arrow-left"></i> Back
+              </button>
+              <button type="button" class="btn btn-primary" id="next2">
+                Next <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Verification -->
+          <div class="form-step" id="step3">
+            <div class="form-step-header">
+              <span class="step-badge">Step 3 of 4</span>
+              <h2>Student ID Verification</h2>
+              <p>Upload a clear photo of your student ID card. This helps us verify your enrollment.</p>
+            </div>
+
+            <div class="upload-zone" id="uploadZone">
+              <input type="file" id="studentIdFile" name="student_id" accept="image/*" class="upload-input" required />
+              <div class="upload-placeholder" id="uploadPlaceholder">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <p><strong>Click to upload</strong> or drag and drop</p>
+                <span>PNG, JPG, JPEG up to 5MB</span>
+              </div>
+              <div class="upload-preview hidden" id="uploadPreview">
+                <img id="previewImg" src="" alt="Student ID preview" />
+                <button type="button" class="remove-img" id="removeImg" aria-label="Remove image">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+            </div>
+            <span class="field-error" id="idFileErr"></span>
+
+            <div class="info-box mt-2">
+              <i class="fa-solid fa-circle-info"></i>
+              <p>Your student ID is used only for verification purposes and is stored securely. Profile approval takes 2–3 business days.</p>
+            </div>
+
+            <div class="form-nav">
+              <button type="button" class="btn btn-outline" id="back3">
+                <i class="fa-solid fa-arrow-left"></i> Back
+              </button>
+              <button type="button" class="btn btn-primary" id="next3">
+                Next <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 4: Review -->
+          <div class="form-step" id="step4">
+            <div class="form-step-header">
+              <span class="step-badge">Step 4 of 4</span>
+              <h2>Review &amp; Submit</h2>
+              <p>Please review your information before submitting.</p>
+            </div>
+            <div class="review-grid" id="reviewGrid">
+              <!-- Populated by JS -->
+            </div>
+            <div class="form-nav">
+              <button type="button" class="btn btn-outline" id="back4">
+                <i class="fa-solid fa-arrow-left"></i> Back
+              </button>
+              <button type="submit" class="btn btn-primary" id="submitBtn">
+                <i class="fa-solid fa-paper-plane"></i> Submit Profile
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+        <!-- Success State -->
+        <div class="profile-success hidden" id="profileSuccess">
+          <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h2>Profile Submitted!</h2>
+          <p>Thank you for submitting your profile. Our team will review your student ID and approve your account within <strong>2–3 business days</strong>.</p>
+          <p class="mt-1">You'll receive a confirmation email once your profile is approved.</p>
+          <div class="success-actions">
+            <a href="jobs.html" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-briefcase"></i> Browse Jobs
+            </a>
+            <a href="../../index.html" class="btn btn-outline btn-lg">
+              <i class="fa-solid fa-house"></i> Go Home
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Uni<span>Quest</span></div>
+        <p>Connecting Ethiopian university students with flexible, meaningful campus job opportunities since 2025.</p>
+        <div class="social-icons mt-2">
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://t.me" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="jobs.html">Browse Jobs</a>
+        <a href="profile.html">Create Profile</a>
+        <a href="login.html">Sign In / Sign Up</a>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <a href="#">How It Works</a>
+        <a href="#">FAQ</a>
+        <a href="mailto:UniQuest@gmail.com">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:UniQuest@gmail.com"><i class="fa-solid fa-envelope"></i> UniQuest@gmail.com</a>
+        <a href="#"><i class="fa-brands fa-telegram"></i> @UniQuestET</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 UniQuest. Helping students find campus opportunities.</p>
+      <p>Made with <i class="fa-solid fa-heart" style="color:#e53e3e"></i> for Ethiopian students</p>
+    </div>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/profile.js"></script>
+</body>
+</html>

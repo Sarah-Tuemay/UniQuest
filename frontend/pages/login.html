@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In / Sign Up – UniQuest</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav>
+      <div class="logo">Uni<span>Quest</span></div>
+      <div class="nav-links"><!-- filled by shared.js --></div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav"><!-- filled by shared.js --></div>
+  </header>
+
+  <!-- ===== AUTH SECTION ===== -->
+  <main class="auth-main">
+    <div class="auth-left">
+      <div class="auth-left-content">
+        <div class="logo mb-3">Uni<span>Quest</span></div>
+        <h2>Your Campus Career Starts Here</h2>
+        <p>Join thousands of Ethiopian university students finding flexible, meaningful work on campus.</p>
+        <ul class="auth-benefits">
+          <li><i class="fa-solid fa-circle-check"></i> Browse 200+ campus job listings</li>
+          <li><i class="fa-solid fa-circle-check"></i> Apply with your student profile</li>
+          <li><i class="fa-solid fa-circle-check"></i> Flexible hours around your classes</li>
+          <li><i class="fa-solid fa-circle-check"></i> Earn in Ethiopian Birr</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="auth-right">
+      <div class="auth-card">
+        <!-- Tabs -->
+        <div class="auth-tabs" role="tablist">
+          <button class="auth-tab active" id="tabSignIn" role="tab" aria-selected="true" aria-controls="panelSignIn">
+            Sign In
+          </button>
+          <button class="auth-tab" id="tabSignUp" role="tab" aria-selected="false" aria-controls="panelSignUp">
+            Sign Up
+          </button>
+        </div>
+
+        <!-- Sign In Panel -->
+        <div class="auth-panel active" id="panelSignIn" role="tabpanel" aria-labelledby="tabSignIn">
+          <h3>Welcome back</h3>
+          <p class="auth-sub">Sign in to your UniQuest account</p>
+          <form id="signInForm" novalidate>
+            <div class="form-group">
+              <label for="siEmail">Email address</label>
+              <div class="input-icon-wrap">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="siEmail" name="email" class="form-control" placeholder="you@university.edu.et" required autocomplete="email" />
+              </div>
+              <span class="field-error" id="siEmailErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="siPassword">Password</label>
+              <div class="input-icon-wrap">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="siPassword" name="password" class="form-control" placeholder="Enter your password" required autocomplete="current-password" />
+                <button type="button" class="toggle-pass" aria-label="Toggle password visibility">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+              <span class="field-error" id="siPassErr"></span>
+            </div>
+            <div class="form-row-between">
+              <label class="checkbox-label">
+                <input type="checkbox" name="remember" /> Remember me
+              </label>
+              <a href="#" class="forgot-link">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn btn-primary w-full mt-2" id="signInBtn">
+              <i class="fa-solid fa-right-to-bracket"></i> Sign In
+            </button>
+          </form>
+          <p class="auth-switch">Don't have an account? <button class="link-btn" id="goSignUp">Sign up free</button></p>
+        </div>
+
+        <!-- Sign Up Panel -->
+        <div class="auth-panel" id="panelSignUp" role="tabpanel" aria-labelledby="tabSignUp">
+          <h3>Create your account</h3>
+          <p class="auth-sub">Join UniQuest and start finding campus jobs</p>
+          <form id="signUpForm" novalidate>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="suFirst">First name</label>
+                <input type="text" id="suFirst" name="first_name" class="form-control" placeholder="Abebe" required autocomplete="given-name" />
+                <span class="field-error" id="suFirstErr"></span>
+              </div>
+              <div class="form-group">
+                <label for="suLast">Last name</label>
+                <input type="text" id="suLast" name="last_name" class="form-control" placeholder="Kebede" required autocomplete="family-name" />
+                <span class="field-error" id="suLastErr"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="suEmail">Email address</label>
+              <div class="input-icon-wrap">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="suEmail" name="email" class="form-control" placeholder="you@university.edu.et" required autocomplete="email" />
+              </div>
+              <span class="field-error" id="suEmailErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="suUniversity">University</label>
+              <select id="suUniversity" name="university" class="form-control" required>
+                <option value="">Select your university</option>
+                <option value="aau">Addis Ababa University</option>
+                <option value="aastu">Addis Ababa Science and Technology University</option>
+                <option value="adama">Adama Science and Technology University</option>
+                <option value="hawassa">Hawassa University</option>
+                <option value="jimma">Jimma University</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="field-error" id="suUniErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="suPassword">Password</label>
+              <div class="input-icon-wrap">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="suPassword" name="password" class="form-control" placeholder="Min. 8 characters" required autocomplete="new-password" />
+                <button type="button" class="toggle-pass" aria-label="Toggle password visibility">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+              <div class="password-strength" id="passStrength">
+                <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+                <span id="strengthLabel"></span>
+              </div>
+              <span class="field-error" id="suPassErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="suConfirm">Confirm password</label>
+              <div class="input-icon-wrap">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="suConfirm" name="confirm_password" class="form-control" placeholder="Repeat your password" required autocomplete="new-password" />
+              </div>
+              <span class="field-error" id="suConfirmErr"></span>
+            </div>
+            <label class="checkbox-label mt-1">
+              <input type="checkbox" name="terms" id="suTerms" required />
+              I agree to the <a href="#" class="forgot-link">Terms of Service</a>
+            </label>
+            <span class="field-error" id="suTermsErr"></span>
+            <button type="submit" class="btn btn-primary w-full mt-2" id="signUpBtn">
+              <i class="fa-solid fa-user-plus"></i> Create Account
+            </button>
+          </form>
+          <p class="auth-switch">Already have an account? <button class="link-btn" id="goSignIn">Sign in</button></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-bottom" style="max-width:1200px;margin:0 auto;">
+      <p>&copy; 2025 UniQuest. Helping students find campus opportunities.</p>
+      <div class="social-icons">
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>

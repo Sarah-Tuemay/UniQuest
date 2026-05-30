@@ -1,89 +1,256 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>UniQuest</title>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png">
-        <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    </head>
-    
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UniQuest – Campus Jobs for Students</title>
+  <link rel="icon" type="image/png" href="frontend/images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="frontend/css/shared.css" />
+  <link rel="stylesheet" href="frontend/css/index.css" />
 </head>
-
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">UniQuest</div>
-            <div class="navigator">
-                <a href="index.html">Home</a>
-                <a href="pages/jobs.html">Jobs</a>
-                <a href="pages/login.html">Login</a>
-            </div>
-            <i class="fa-solid fa-bars fa-xs hum-menu" style="color: #74C0FC;"></i>
-        </nav>
-    </header>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav>
+      <div class="logo">
+        Uni<span>Quest</span>
+      </div>
+      <div class="nav-links"><!-- filled by shared.js --></div>
+      <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav"><!-- filled by shared.js --></div>
+  </header>
 
-<section class="main">
-    <section class="hero" id="home">
-        <h1>Find Flexible Campus Jobs That Fit Your Schedule</h1>
-    </section>
-
-    
-    <section class="about">
-        <section class="about-content1">
-            <h2>Find Work That Fits Your Life</h2>
-     
-            <p>Discover flexible campus opportunities with UniQuest! College can be hectic, but you don’t have to sacrifice your passions or schedule to earn income and gain experience. We understand the struggle of balancing academics and work, and we’re here to help. UniQuest bridges the gap between students and local businesses, offering meaningful gigs that align with your skills and respect your time. Whether you excel in coding, communication, or event planning, find work that fits your life seamlessly.</p>
-        </section>
-        <br> 
-        <br>
-       
-        </section>
-
-    <section class="how-it-works">
-        <h2>How It Works</h2>
-        <p>Connect with on-campus opportunities that match your skills and availability</p>
-        <div class="steps-container">
-            <div class="step-card card-1">
-                <h3>1. Create Profile</h3>
-                <p>Highlight your skills, availability, and interests</p>
-            </div>
-            <div class="step-card card-2">
-                <h3>2. Find Jobs</h3>
-                <p>Browse curated campus opportunities</p>
-            </div>
-            <div class="step-card card-3">
-                <h3>3. Apply</h3>
-                <p>Quickly apply with your student profile</p>
-            </div>
+  <!-- ===== HERO ===== -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <div class="hero-text animate-fadeInUp">
+        <span class="hero-tag"><i class="fa-solid fa-graduation-cap"></i> For Ethiopian University Students</span>
+        <h1>Find Flexible Campus Jobs That <span class="highlight">Fit Your Schedule</span></h1>
+        <p>UniQuest connects students with meaningful on-campus opportunities — earn income, build skills, and grow your network without sacrificing your studies.</p>
+        <div class="hero-actions">
+          <a href="frontend/pages/jobs.html" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-briefcase"></i> Browse Jobs
+          </a>
+          <a href="frontend/pages/profile.html" class="btn btn-white btn-lg">
+            <i class="fa-solid fa-user-plus"></i> Create Profile
+          </a>
         </div>
-
-    </section>
-
-    <footer>
-        <div class="social-icons">
-            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
-                <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://telegram.org" target="_blank" aria-label="Telegram">
-                <i class="fab fa-telegram"></i>
-            </a>
+        <div class="hero-stats">
+          <div class="stat"><strong>200+</strong><span>Campus Jobs</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><strong>8</strong><span>Categories</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><strong>5+</strong><span>Universities</span></div>
         </div>
-        <p>&copy 2025 UniQuest. Helping students find campus opportunities.</p>
-        <p>Contact: UniQuest@gmail.com</p>
-    </footer>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
 
-    <script src="js/index.js"></script>
+  <!-- ===== ABOUT ===== -->
+  <section class="section about-section">
+    <div class="container about-grid">
+      <div class="about-text animate-slideLeft">
+        <span class="section-tag">About UniQuest</span>
+        <h2>Work That Fits <span class="text-accent">Your Life</span></h2>
+        <p>College can be hectic, but you don't have to sacrifice your passions or schedule to earn income and gain experience. UniQuest bridges the gap between students and campus departments, offering meaningful gigs that align with your skills and respect your time.</p>
+        <p class="mt-2">Whether you excel in coding, communication, or event planning — find work that fits your life seamlessly.</p>
+        <a href="frontend/pages/jobs.html" class="btn btn-primary mt-3">
+          <i class="fa-solid fa-arrow-right"></i> Explore Opportunities
+        </a>
+      </div>
+      <div class="about-features">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
+          <div>
+            <h3>Flexible Hours</h3>
+            <p>Jobs designed around your class schedule — no conflicts, no stress.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div>
+            <h3>Skill Development</h3>
+            <p>Gain real-world experience that boosts your resume and career prospects.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
+          <div>
+            <h3>Networking</h3>
+            <p>Connect with campus departments and local businesses to grow your network.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-coins"></i></div>
+          <div>
+            <h3>Earn Income</h3>
+            <p>Competitive pay rates in Ethiopian Birr — paid fairly for your time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section how-section">
+    <div class="container">
+      <span class="section-tag text-center" style="display:block">Simple Process</span>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">Three easy steps to land your next campus job</p>
+      <div class="steps-grid">
+        <div class="step-card card-1" id="stepProfile" role="button" tabindex="0">
+          <div class="step-number">01</div>
+          <div class="step-icon"><i class="fa-solid fa-id-card"></i></div>
+          <h3>Create Profile</h3>
+          <p>Highlight your skills, availability, and interests. Upload your student ID for verification.</p>
+          <span class="step-link">Get started <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+        <div class="step-card card-2" id="stepJobs" role="button" tabindex="0">
+          <div class="step-number">02</div>
+          <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h3>Find Jobs</h3>
+          <p>Browse curated campus opportunities across 8 categories. Filter by schedule and pay.</p>
+          <span class="step-link">Browse jobs <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+        <div class="step-card card-3" id="stepApply" role="button" tabindex="0">
+          <div class="step-number">03</div>
+          <div class="step-icon"><i class="fa-solid fa-paper-plane"></i></div>
+          <h3>Apply & Work</h3>
+          <p>Quickly apply with your student profile. Get notified and start earning on campus.</p>
+          <span class="step-link">Apply now <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED JOBS ===== -->
+  <section class="section featured-section">
+    <div class="container">
+      <span class="section-tag text-center" style="display:block">Hot Listings</span>
+      <h2 class="section-title">Featured Opportunities</h2>
+      <p class="section-subtitle">Handpicked jobs available right now across Ethiopian campuses</p>
+      <div class="grid-3 featured-grid">
+        <div class="job-card card">
+          <div class="job-card-header">
+            <div class="job-icon it"><i class="fa-solid fa-laptop-code"></i></div>
+            <span class="badge badge-blue">IT & Tech</span>
+          </div>
+          <h3>Tech Support Specialist</h3>
+          <p class="job-dept"><i class="fa-solid fa-building"></i> IT Department</p>
+          <p class="job-detail"><i class="fa-solid fa-clock"></i> Flexible hours</p>
+          <p class="job-pay"><i class="fa-solid fa-coins"></i> 50 birr/hr</p>
+          <a href="frontend/pages/tech.html" class="btn btn-outline btn-sm mt-2 w-full">View Details</a>
+        </div>
+        <div class="job-card card">
+          <div class="job-card-header">
+            <div class="job-icon lib"><i class="fa-solid fa-book-open"></i></div>
+            <span class="badge badge-green">Library</span>
+          </div>
+          <h3>Library Assistant</h3>
+          <p class="job-dept"><i class="fa-solid fa-building"></i> University Library</p>
+          <p class="job-detail"><i class="fa-solid fa-clock"></i> Evening shifts</p>
+          <p class="job-pay"><i class="fa-solid fa-coins"></i> 30 birr/hr</p>
+          <a href="frontend/pages/jobs.html" class="btn btn-outline btn-sm mt-2 w-full">View Details</a>
+        </div>
+        <div class="job-card card">
+          <div class="job-card-header">
+            <div class="job-icon event"><i class="fa-solid fa-calendar-star"></i></div>
+            <span class="badge badge-yellow">Events</span>
+          </div>
+          <h3>Event Staff</h3>
+          <p class="job-dept"><i class="fa-solid fa-building"></i> Student Center</p>
+          <p class="job-detail"><i class="fa-solid fa-clock"></i> Weekends</p>
+          <p class="job-pay"><i class="fa-solid fa-coins"></i> 40 birr/hr</p>
+          <a href="frontend/pages/jobs.html" class="btn btn-outline btn-sm mt-2 w-full">View Details</a>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <a href="frontend/pages/jobs.html" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-briefcase"></i> View All Jobs
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== UNIVERSITIES ===== -->
+  <section class="section-sm universities-section">
+    <div class="container">
+      <p class="uni-label">Serving students at</p>
+      <div class="uni-list">
+        <span>Addis Ababa University</span>
+        <span>AASTU</span>
+        <span>Adama Science & Technology</span>
+        <span>Hawassa University</span>
+        <span>Jimma University</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner">
+    <div class="container cta-inner">
+      <div>
+        <h2>Ready to Start Earning?</h2>
+        <p>Join hundreds of students already working flexible campus jobs through UniQuest.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="frontend/pages/profile.html" class="btn btn-white btn-lg">Create Your Profile</a>
+        <a href="frontend/pages/login.html" class="btn btn-outline-white btn-lg">Sign In</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Uni<span>Quest</span></div>
+        <p>Connecting Ethiopian university students with flexible, meaningful campus job opportunities since 2025.</p>
+        <div class="social-icons mt-2">
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://t.me" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="frontend/pages/jobs.html">Browse Jobs</a>
+        <a href="frontend/pages/profile.html">Create Profile</a>
+        <a href="frontend/pages/login.html">Sign In / Sign Up</a>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <a href="frontend/pages/tech.html">IT & Tech</a>
+        <a href="frontend/pages/jobs.html">Administration</a>
+        <a href="frontend/pages/jobs.html">Events</a>
+        <a href="frontend/pages/jobs.html">Library</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:UniQuest@gmail.com"><i class="fa-solid fa-envelope"></i> UniQuest@gmail.com</a>
+        <a href="#"><i class="fa-brands fa-telegram"></i> @UniQuestET</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 UniQuest. Helping students find campus opportunities.</p>
+      <p>Made with <i class="fa-solid fa-heart" style="color:#e53e3e"></i> for Ethiopian students</p>
+    </div>
+  </footer>
+
+  <script src="frontend/js/shared.js"></script>
+  <script src="frontend/js/index.js"></script>
 </body>
-
 </html>

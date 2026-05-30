@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account – UniQuest</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/account.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav>
+      <div class="logo">Uni<span>Quest</span></div>
+      <div class="nav-links"><!-- filled by shared.js --></div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav"><!-- filled by shared.js --></div>
+  </header>
+
+  <!-- ===== ACCOUNT LAYOUT ===== -->
+  <main class="account-main">
+
+    <!-- Sidebar -->
+    <aside class="account-sidebar">
+      <div class="account-avatar" id="avatarBlock">
+        <div class="avatar-circle" id="avatarCircle">?</div>
+        <div class="avatar-info">
+          <strong id="sidebarName">Loading...</strong>
+          <span id="sidebarEmail"></span>
+        </div>
+      </div>
+
+      <nav class="account-nav">
+        <a href="#overview"     class="acc-nav-item active" data-tab="overview">
+          <i class="fa-solid fa-house"></i> Overview
+        </a>
+        <a href="#applications" class="acc-nav-item" data-tab="applications">
+          <i class="fa-solid fa-file-lines"></i> My Applications
+        </a>
+        <a href="#profile"      class="acc-nav-item" data-tab="profile">
+          <i class="fa-solid fa-id-card"></i> My Profile
+        </a>
+        <a href="#settings"     class="acc-nav-item" data-tab="settings">
+          <i class="fa-solid fa-gear"></i> Settings
+        </a>
+        <a href="#" class="acc-nav-item sign-out-btn" id="sidebarSignOut">
+          <i class="fa-solid fa-right-from-bracket"></i> Sign Out
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Content -->
+    <div class="account-content">
+
+      <!-- ---- OVERVIEW TAB ---- -->
+      <section class="acc-tab active" id="tab-overview">
+        <div class="acc-tab-header">
+          <h2>Welcome back, <span id="welcomeName">there</span>!</h2>
+          <p>Here's a summary of your UniQuest activity.</p>
+        </div>
+
+        <div class="overview-stats">
+          <div class="ov-stat">
+            <div class="ov-stat-icon apps"><i class="fa-solid fa-file-lines"></i></div>
+            <div>
+              <strong id="statApps">0</strong>
+              <span>Applications</span>
+            </div>
+          </div>
+          <div class="ov-stat">
+            <div class="ov-stat-icon pending"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <strong id="statPending">0</strong>
+              <span>Pending</span>
+            </div>
+          </div>
+          <div class="ov-stat">
+            <div class="ov-stat-icon accepted"><i class="fa-solid fa-circle-check"></i></div>
+            <div>
+              <strong id="statAccepted">0</strong>
+              <span>Accepted</span>
+            </div>
+          </div>
+          <div class="ov-stat">
+            <div class="ov-stat-icon profile-stat"><i class="fa-solid fa-id-card"></i></div>
+            <div>
+              <strong id="statProfile">—</strong>
+              <span>Profile Status</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="overview-actions">
+          <a href="jobs.html" class="btn btn-primary">
+            <i class="fa-solid fa-briefcase"></i> Browse Jobs
+          </a>
+          <a href="profile.html" class="btn btn-outline">
+            <i class="fa-solid fa-id-card"></i> Update Profile
+          </a>
+        </div>
+
+        <div class="recent-apps-wrap">
+          <h3>Recent Applications</h3>
+          <div id="recentApps" class="recent-apps-list">
+            <div class="acc-empty">
+              <i class="fa-solid fa-inbox"></i>
+              <p>No applications yet. <a href="jobs.html">Browse jobs</a> to get started.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---- APPLICATIONS TAB ---- -->
+      <section class="acc-tab" id="tab-applications">
+        <div class="acc-tab-header">
+          <h2>My Applications</h2>
+          <p>Track the status of all your job applications.</p>
+        </div>
+        <div id="allApps" class="apps-list">
+          <div class="acc-loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</div>
+        </div>
+      </section>
+
+      <!-- ---- PROFILE TAB ---- -->
+      <section class="acc-tab" id="tab-profile">
+        <div class="acc-tab-header">
+          <h2>My Profile</h2>
+          <p>Your student profile information.</p>
+        </div>
+        <div id="profileInfo" class="profile-info-grid">
+          <div class="acc-loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</div>
+        </div>
+        <div class="profile-actions mt-3">
+          <a href="profile.html" class="btn btn-primary">
+            <i class="fa-solid fa-pen"></i> Edit / Resubmit Profile
+          </a>
+        </div>
+      </section>
+
+      <!-- ---- SETTINGS TAB ---- -->
+      <section class="acc-tab" id="tab-settings">
+        <div class="acc-tab-header">
+          <h2>Account Settings</h2>
+          <p>Manage your account preferences.</p>
+        </div>
+
+        <div class="settings-card">
+          <h3><i class="fa-solid fa-lock"></i> Change Password</h3>
+          <form id="changePassForm" novalidate>
+            <div class="form-group">
+              <label for="currentPass">Current Password</label>
+              <input type="password" id="currentPass" class="form-control" placeholder="Enter current password" />
+              <span class="field-error" id="currentPassErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="newPass">New Password</label>
+              <input type="password" id="newPass" class="form-control" placeholder="Min. 8 characters" />
+              <span class="field-error" id="newPassErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="confirmPass">Confirm New Password</label>
+              <input type="password" id="confirmPass" class="form-control" placeholder="Repeat new password" />
+              <span class="field-error" id="confirmPassErr"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" id="changePassBtn">
+              <i class="fa-solid fa-key"></i> Update Password
+            </button>
+          </form>
+        </div>
+
+        <div class="settings-card danger-zone">
+          <h3><i class="fa-solid fa-triangle-exclamation"></i> Danger Zone</h3>
+          <p>Signing out will clear your session from this device.</p>
+          <button class="btn btn-danger sign-out-btn" id="settingsSignOut">
+            <i class="fa-solid fa-right-from-bracket"></i> Sign Out
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-bottom" style="max-width:1200px;margin:0 auto;">
+      <p>&copy; 2025 UniQuest. Helping students find campus opportunities.</p>
+      <div class="social-icons">
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://tiktok.com"  target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me"        target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/account.js"></script>
+</body>
+</html>
